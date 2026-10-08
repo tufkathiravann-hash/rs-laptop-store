@@ -73,7 +73,9 @@ export function App() {
                             <Route path="/" element={<HomePage />} />
                             <Route path="/laptops" element={<ProductsPage />} />
                             <Route path="/product/:id" element={<ProductDetailPage />} />
+                            <Route path="/laptop/:id" element={<ProductDetailPage />} />
                             <Route path="/deals" element={<DealsPage />} />
+
                             <Route path="/cart" element={<CartPage />} />
                             <Route path="/checkout" element={<CheckoutPage />} />
                             <Route path="/wishlist" element={<WishlistPage />} />
