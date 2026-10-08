@@ -6,13 +6,23 @@ export function getAssetUrl(path?: string): string {
     return path;
   }
   const base = import.meta.env.BASE_URL || '/';
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  
+  // Prevent duplicate prefixing
+  if (path.startsWith(cleanBase) || (base !== '/' && path.startsWith(base))) {
+    return path;
+  }
+  if (path.startsWith('/rs-laptop-store/')) {
+    return path;
+  }
+
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   return `${cleanBase}${cleanPath}`;
 }
 
 export const DEFAULT_LAPTOP_FALLBACK = getAssetUrl('/images/laptop-placeholder.svg');
 export const DEFAULT_AVATAR_FALLBACK = getAssetUrl('/images/avatar-placeholder.svg');
+
 
 interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fallbackSrc?: string;

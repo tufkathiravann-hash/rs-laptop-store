@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cpu, Zap, Flame, Tv, Battery, ShieldCheck, Sparkles } from 'lucide-react';
+import { getAssetUrl } from '../common/SafeImage';
 
 export const SpecVisualizer: React.FC = () => {
+
   const [activeComponent, setActiveComponent] = useState<'cpu' | 'gpu' | 'cooling' | 'display' | 'battery'>('cooling');
 
   const components = [
@@ -94,7 +96,7 @@ export const SpecVisualizer: React.FC = () => {
               initial={{ opacity: 0, scale: 1.08 }}
               animate={{ opacity: 0.8, scale: 1 }}
               transition={{ duration: 0.6 }}
-              src="/images/laptops/tech-1.jpg"
+              src={getAssetUrl('/images/laptops/tech-1.jpg')}
               alt="Silicon motherboard close-up"
               className="w-full h-full object-cover rounded-xl filter contrast-125"
             />
