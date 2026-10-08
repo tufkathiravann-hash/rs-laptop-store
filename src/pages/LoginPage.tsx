@@ -18,8 +18,10 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
+import { getAssetUrl, DEFAULT_LAPTOP_FALLBACK } from '../components/common/SafeImage';
 
 export const LoginPage: React.FC = () => {
+
   const [searchParams] = useSearchParams();
   const initialTab = searchParams.get('tab') === 'register' ? 'register' : 'login';
   const [tab, setTab] = useState<'login' | 'register'>(initialTab);
@@ -133,12 +135,12 @@ export const LoginPage: React.FC = () => {
             <motion.img
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              src="/images/laptops/rog-scar-18.jpg"
+              src={getAssetUrl('/images/laptops/rog-scar-18.jpg')}
               alt="RS Flagship Machine"
               onError={(e) => {
                 const target = e.currentTarget as HTMLImageElement;
-                if (target.src !== window.location.origin + '/images/laptop-placeholder.svg') {
-                  target.src = '/images/laptop-placeholder.svg';
+                if (target.src !== DEFAULT_LAPTOP_FALLBACK) {
+                  target.src = DEFAULT_LAPTOP_FALLBACK;
                 }
               }}
               className="max-h-[200px] object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)]"
