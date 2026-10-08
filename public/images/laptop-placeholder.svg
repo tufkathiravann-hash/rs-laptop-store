@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141419" />
+      <stop offset="50%" stop-color="#0a0a0c" />
+      <stop offset="100%" stop-color="#050506" />
+    </linearGradient>
+    <linearGradient id="lidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a2b36" />
+      <stop offset="100%" stop-color="#15161c" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="40%" stop-color="#1e1026" />
+      <stop offset="100%" stop-color="#08080c" />
+    </linearGradient>
+    <linearGradient id="baseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#323340" />
+      <stop offset="50%" stop-color="#1e1f26" />
+      <stop offset="100%" stop-color="#121317" />
+    </linearGradient>
+    <linearGradient id="cyberRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="50%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.9" />
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#ef4444" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bgGlow)" rx="24" />
+
+  <!-- Background decorative tech grid -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="500" />
+    <line x1="250" y1="0" x2="250" y2="500" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+    <line x1="550" y1="0" x2="550" y2="500" />
+    <line x1="700" y1="0" x2="700" y2="500" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="250" x2="800" y2="250" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+  </g>
+
+  <!-- Laptop illustration -->
+  <g filter="url(#shadow)">
+    <!-- Display Lid -->
+    <rect x="200" y="70" width="400" height="260" rx="14" fill="url(#lidGrad)" stroke="#3f4052" stroke-width="2" />
+    <!-- Screen Bezel -->
+    <rect x="210" y="80" width="380" height="236" rx="8" fill="#08080a" />
+    <!-- Screen Inner Display -->
+    <rect x="216" y="86" width="368" height="224" rx="6" fill="url(#screenGrad)" />
+
+    <!-- Screen graphic / branding -->
+    <circle cx="400" cy="180" r="42" fill="none" stroke="url(#cyberRed)" stroke-width="2" opacity="0.4" />
+    <polygon points="400,152 425,195 375,195" fill="none" stroke="#ef4444" stroke-width="2.5" />
+    <text x="400" y="240" font-family="monospace, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="3">RS LAPTOPS</text>
+    <text x="400" y="260" font-family="monospace, sans-serif" font-size="10" fill="#ef4444" text-anchor="middle" letter-spacing="2">ULTRA PERFORMANCE</text>
+
+    <!-- Webcam -->
+    <circle cx="400" cy="83" r="2.5" fill="#1e293b" />
+    <circle cx="400" cy="83" r="1" fill="#38bdf8" opacity="0.8" />
+
+    <!-- Laptop Base / Keyboard deck (perspective projection) -->
+    <path d="M 140 330 L 660 330 L 720 395 L 80 395 Z" fill="url(#baseGrad)" stroke="#3a3b4c" stroke-width="1.5" />
+    <!-- Keyboard well -->
+    <polygon points="210,336 590,336 620,366 180,366" fill="#121317" stroke="#252630" stroke-width="1" />
+    
+    <!-- RGB Glow bar below keyboard -->
+    <line x1="220" y1="368" x2="580" y2="368" stroke="url(#cyberRed)" stroke-width="2" opacity="0.8" />
+
+    <!-- Trackpad -->
+    <polygon points="350,372 450,372 455,392 345,392" fill="#1a1b22" stroke="#2e303d" stroke-width="1" />
+
+    <!-- Front Lip of chassis -->
+    <path d="M 80 395 L 720 395 C 720 405 710 408 695 408 L 105 408 C 90 408 80 405 80 395 Z" fill="#0d0e12" stroke="#24252e" stroke-width="1" />
+
+    <!-- Front RGB Underglow -->
+    <line x1="160" y1="407" x2="640" y2="407" stroke="url(#cyberRed)" stroke-width="3" opacity="0.7" />
+  </g>
+</svg>
