@@ -3,9 +3,10 @@ import { Star, CheckCircle, ThumbsUp, MessageSquare, Plus, Check } from 'lucide-
 import { LaptopReview } from '../../types/product';
 import { SAMPLE_REVIEWS } from '../../data/reviews';
 import { useToast } from '../../context/ToastContext';
-import { SafeImage, DEFAULT_AVATAR_FALLBACK } from '../common/SafeImage';
+import { SafeImage, DEFAULT_AVATAR_FALLBACK, getAssetUrl } from '../common/SafeImage';
 
 interface ReviewSectionProps {
+
   laptopId: string;
   rating: number;
   reviewCount: number;
@@ -40,8 +41,9 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({ laptopId, rating, 
     const reviewObj: LaptopReview = {
       id: `rev-${Date.now()}`,
       author: newAuthor,
-      avatar: '/images/avatars/avatar-user.jpg',
+      avatar: getAssetUrl('/images/avatars/avatar-user.jpg'),
       rating: newRating,
+
       date: 'Just now',
       title: newTitle,
       comment: newComment,

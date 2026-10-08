@@ -1,3 +1,5 @@
+import { getAssetUrl } from '../components/common/SafeImage';
+
 export interface CategoryInfo {
   id: 'gaming' | 'ultrabook' | 'business' | 'creator' | 'student' | 'performance';
   name: string;
@@ -16,18 +18,19 @@ export const CATEGORIES_DATA: CategoryInfo[] = [
     name: 'Gaming Rigs',
     shortDesc: 'Uncompromising FPS with RTX 4090 & liquid metal cooling',
     fullDesc: 'Dominate esports and AAA blockbusters with high-TGP NVIDIA RTX graphics, 240Hz+ OLED displays, mechanical keyboards, and vapor chamber thermals.',
-    bannerImage: '/images/categories/gaming.jpg',
+    bannerImage: getAssetUrl('/images/categories/gaming.jpg'),
     accentColor: '#FF0033',
     iconName: 'Gamepad2',
     laptopCount: 8,
     highlightSpec: 'Up to RTX 4090 175W + 300Hz QHD'
   },
+
   {
     id: 'ultrabook',
     name: 'Ultrabooks',
     shortDesc: 'Featherlight precision CNC unibody & all-day battery life',
     fullDesc: 'Engineered for discerning modern executives and travelers. Whisper-quiet fanless and ultra-slim designs with 18+ hour battery endurance and borderless screens.',
-    bannerImage: '/images/categories/ultrabook.jpg',
+    bannerImage: getAssetUrl('/images/categories/ultrabook.jpg'),
     accentColor: '#FFFFFF',
     iconName: 'Feather',
     laptopCount: 7,
@@ -38,7 +41,7 @@ export const CATEGORIES_DATA: CategoryInfo[] = [
     name: 'Creator Studio',
     shortDesc: 'Color-accurate 4K OLED, DCI-P3 100% & hardware encode engines',
     fullDesc: 'Breathe life into 8K video editing, 3D CGI rendering, and architectural modeling with factory-calibrated Pantone validated displays and dual encoder silicon.',
-    bannerImage: '/images/categories/creator.jpg',
+    bannerImage: getAssetUrl('/images/categories/creator.jpg'),
     accentColor: '#FF2A4D',
     iconName: 'Palette',
     laptopCount: 6,
@@ -49,7 +52,7 @@ export const CATEGORIES_DATA: CategoryInfo[] = [
     name: 'Business Elite',
     shortDesc: 'Enterprise biometric security, MIL-STD toughness & 5G connectivity',
     fullDesc: 'Built for enterprise leadership. Features discrete TPM 2.0, mechanical privacy shutters, carbon fiber reinforcement, and legendary ergonomic keyboards.',
-    bannerImage: '/images/categories/business.jpg',
+    bannerImage: getAssetUrl('/images/categories/business.jpg'),
     accentColor: '#E5E7EB',
     iconName: 'Briefcase',
     laptopCount: 6,
@@ -60,7 +63,7 @@ export const CATEGORIES_DATA: CategoryInfo[] = [
     name: 'Workstations',
     shortDesc: 'Maxed multicore compute, ECC RAM & modular upgradeability',
     fullDesc: 'Extreme mobile desktop replacement workstations tailored for data science, AI training, CAD simulation, and massive parallel computing workloads.',
-    bannerImage: '/images/categories/performance.jpg',
+    bannerImage: getAssetUrl('/images/categories/performance.jpg'),
     accentColor: '#DC2626',
     iconName: 'Cpu',
     laptopCount: 5,
@@ -71,7 +74,7 @@ export const CATEGORIES_DATA: CategoryInfo[] = [
     name: 'Student & Campus',
     shortDesc: 'High efficiency, durable construction & unbeatable value',
     fullDesc: 'The ultimate academic companions. Fast multi-tasking, all-day battery life, crisp displays for lectures, and lightweight builds that slip easily into any backpack.',
-    bannerImage: '/images/categories/student.jpg',
+    bannerImage: getAssetUrl('/images/categories/student.jpg'),
     accentColor: '#F87171',
     iconName: 'GraduationCap',
     laptopCount: 6,

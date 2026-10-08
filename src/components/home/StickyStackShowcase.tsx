@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ShieldCheck, Zap, Award, Flame, ArrowRight, Sparkles } from 'lucide-react';
 import { useCurrency } from '../../context/CurrencyContext';
-import { SafeImage } from '../common/SafeImage';
+import { SafeImage, getAssetUrl } from '../common/SafeImage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,7 +19,7 @@ export const StickyStackShowcase: React.FC = () => {
       title: 'Conductonaut Extreme Liquid Metal',
       desc: 'Applied in clean-room environments to both CPU and GPU dies. Replaces conventional silicone thermal paste to lower operating temperatures by up to 15°C under sustained 175W power draw.',
       badge: 'Zero Thermal Throttling',
-      image: '/images/showcase/thermal.jpg',
+      image: getAssetUrl('/images/showcase/thermal.jpg'),
       stat: '15°C Cooler',
       statLabel: 'Under Peak Synthetic Load'
     },
@@ -29,7 +29,7 @@ export const StickyStackShowcase: React.FC = () => {
       title: 'Delta E < 1 Calman Factory Calibration',
       desc: 'Each panel undergoes multi-point optical spectroradiometer profiling. 100% DCI-P3 wide color gamut and 1600-nit HDR ensure every frame matches Hollywood color grading standards.',
       badge: '100% DCI-P3 Color Gamut',
-      image: '/images/showcase/optical.jpg',
+      image: getAssetUrl('/images/showcase/optical.jpg'),
       stat: 'Delta E < 1',
       statLabel: 'Individual Spectrometer Tuning'
     },
@@ -39,7 +39,7 @@ export const StickyStackShowcase: React.FC = () => {
       title: 'Zero-Downtime Hot Swap Warranty',
       desc: 'Should any hardware defect occur during your 2-year warranty period, our insured courier dispatches a brand new replacement machine to your door before retrieving the defective laptop.',
       badge: '2-Year VIP Care Included',
-      image: '/images/showcase/warranty.jpg',
+      image: getAssetUrl('/images/showcase/warranty.jpg'),
       stat: 'Zero Downtime',
       statLabel: 'Next-Day Courier Replacement'
     }

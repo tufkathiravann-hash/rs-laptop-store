@@ -1,6 +1,8 @@
 import { Laptop } from '../types/product';
+import { getAssetUrl } from '../components/common/SafeImage';
 
-export const LAPTOPS_DATA: Laptop[] = [
+const RAW_LAPTOPS_DATA: Laptop[] = [
+
   // --- GAMING RIGS ---
   {
     id: 'rog-scar-18-2024',
@@ -1025,3 +1027,9 @@ export const LAPTOPS_DATA: Laptop[] = [
     warranty: '2-Year RS VIP Support'
   }
 ];
+
+export const LAPTOPS_DATA: Laptop[] = RAW_LAPTOPS_DATA.map((laptop) => ({
+  ...laptop,
+  images: laptop.images.map((img) => getAssetUrl(img))
+}));
+

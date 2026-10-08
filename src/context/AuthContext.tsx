@@ -3,6 +3,7 @@ import { UserProfile } from '../types/user';
 import { Order } from '../types/cart';
 import { getStorageItem, setStorageItem, removeStorageItem } from '../utils/storage';
 import { useToast } from './ToastContext';
+import { getAssetUrl } from '../components/common/SafeImage';
 
 interface AuthContextType {
   user: UserProfile | null;
@@ -23,8 +24,9 @@ const DEFAULT_DEMO_USER: UserProfile = {
   id: 'usr_rs_8892',
   fullName: 'Alexander Wright',
   email: 'alex.wright@executive.tech',
-  avatar: '/images/avatars/avatar-user.jpg',
+  avatar: getAssetUrl('/images/avatars/avatar-user.jpg'),
   phone: '+91 98765 43210',
+
   memberTier: 'Elite Black',
   addresses: [
     {
@@ -121,7 +123,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       id: `usr_${Math.random().toString(36).substring(2, 8)}`,
       fullName: email.split('@')[0].replace('.', ' ').toUpperCase(),
       email,
-      avatar: '/images/avatars/avatar-user.jpg',
+      avatar: getAssetUrl('/images/avatars/avatar-user.jpg'),
       memberTier: 'Pro VIP',
       addresses: [],
       orders: [],
@@ -144,7 +146,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       id: `usr_${Math.random().toString(36).substring(2, 8)}`,
       fullName,
       email,
-      avatar: '/images/avatars/avatar-user.jpg',
+      avatar: getAssetUrl('/images/avatars/avatar-user.jpg'),
       memberTier: 'Standard',
       addresses: [],
       orders: [],
@@ -168,7 +170,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         id: `guest_${Date.now()}`,
         fullName: order.shippingAddress.fullName,
         email: order.shippingAddress.email,
-        avatar: '/images/avatars/avatar-user.jpg',
+        avatar: getAssetUrl('/images/avatars/avatar-user.jpg'),
         memberTier: 'Standard',
         addresses: [{ ...order.shippingAddress, id: 'addr_1', isDefault: true }],
         orders: [order],
@@ -177,6 +179,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       setUser(guestUser);
       return;
     }
+
 
     setUser({
       ...user,

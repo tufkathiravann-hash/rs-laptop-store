@@ -1,11 +1,12 @@
 import { LaptopReview } from '../types/product';
+import { getAssetUrl } from '../components/common/SafeImage';
 
 export const SAMPLE_REVIEWS: Record<string, LaptopReview[]> = {
   default: [
     {
       id: 'rev-1',
       author: 'Marcus Vance',
-      avatar: '/images/avatars/avatar-1.jpg',
+      avatar: getAssetUrl('/images/avatars/avatar-1.jpg'),
       rating: 5,
       date: '3 days ago',
       title: 'Unbelievable performance and whisper-quiet thermals',
@@ -16,7 +17,7 @@ export const SAMPLE_REVIEWS: Record<string, LaptopReview[]> = {
     {
       id: 'rev-2',
       author: 'Elena Rostova',
-      avatar: '/images/avatars/avatar-2.jpg',
+      avatar: getAssetUrl('/images/avatars/avatar-2.jpg'),
       rating: 5,
       date: '1 week ago',
       title: 'The build quality is breathtaking',
@@ -27,7 +28,7 @@ export const SAMPLE_REVIEWS: Record<string, LaptopReview[]> = {
     {
       id: 'rev-3',
       author: 'Devon Takahashi',
-      avatar: '/images/avatars/avatar-3.jpg',
+      avatar: getAssetUrl('/images/avatars/avatar-3.jpg'),
       rating: 4,
       date: '2 weeks ago',
       title: 'Top-tier graphics, power brick is a bit hefty',
